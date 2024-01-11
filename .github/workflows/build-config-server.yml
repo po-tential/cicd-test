@@ -1,4 +1,4 @@
-name: build-config-server
+name: config 서버 빌드
 
 on:
   workflow_dispatch:
