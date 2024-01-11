@@ -1,16 +1,37 @@
-name: Manual Trigger
+name: 프로젝트 빌드
 
 on:
   workflow_dispatch:
     inputs:
-      message:
-        description: 'Enter a custom message'
-        required: true
+      project:
+        type: choice
+        description: 빌드 할 프로젝트 선택
+        options: 
+        - embedded-keycloak-server
+        - service-config-server
+        default: ''
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Message
-        run: echo "${{ github.event.inputs.message }}"
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up JDK and Maven
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+
+      - name: Build Project
+        run: |
+          # 입력으로 받은 프로젝트 이름 사용
+          selected_project=${{ github.event.inputs.project }}
+
+          # 선택된 프로젝트로 이동
+          cd servers/$selected_project
+
+          # 모든 프로젝트에 대해 동일한 빌드 명령어 실행
+          mvn clean package
