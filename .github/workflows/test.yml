@@ -1,14 +1,14 @@
-name: Manual Trigger
+name: 프로젝트 빌드
 
 on:
   workflow_dispatch:
     inputs:
       project:
-        description: '빌드 할 프로젝트 선택'
-        required: true
+        type: choice
+        description: 빌드 할 프로젝트 선택
         options: 
-          - 'embedded-keycloak-server'
-          - 'service-config-server'
+        - embedded-keycloak-server
+        - service-config-server
         default: ''
 
 jobs:
