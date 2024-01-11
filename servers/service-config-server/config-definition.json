@@ -1,4 +1,4 @@
-{
+{ 
   "family": "test-config-family",
   "executionRoleArn": "arn:aws:iam::178439930801:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
