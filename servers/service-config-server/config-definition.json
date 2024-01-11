@@ -1,0 +1,24 @@
+{
+  "family": "test-config-family",
+  "executionRoleArn": "arn:aws:iam::178439930801:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "test-config-container",
+      "image": "178439930801.dkr.ecr.ap-northeast-1.amazonaws.com/test-config-repo:latest",
+      "portMappings": [
+        {
+          "containerPort": 7777,
+          "hostPort": 7777,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "512",
+  "memory": "1024"
+}
