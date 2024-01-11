@@ -1,0 +1,57 @@
+spring:
+   application:
+      name: service-config-server
+   profiles:
+      active: git
+
+---
+# configuration: common       
+server:
+   port: 7777
+    
+---
+# configuration: git
+spring:
+   config:
+      activate:
+         on-profile: git   
+   cloud:
+      config:
+         server:
+            encrypt.enabled: true
+            git:
+               uri: https://github.com/po-tential/potential-project-config-repo
+               searchPaths: service-gateway-server,
+                            service-potential
+logging:
+   pattern:
+      file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   logback:
+      rollingpolicy:
+         file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
+         max-file-size: 10MB
+         max-history: 10
+   file:
+      name: logs/${spring.application.name}.log
+   level:
+      root: WARN
+               
+
+---
+# configuration: native(file system)
+spring:
+   config:
+      activate:
+         on-profile: native
+   cloud:
+     config:
+       server:
+          encrypt.enabled: true
+          native:
+              searchLocations: file:///D:\po-tential\potential-project-config-repo\service-gateway-server,
+                               file:///D:\po-tential\potential-project-config-repo\service-potential
+logging:
+   pattern:
+      console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
+   level:
+      root: INFO
