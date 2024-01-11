@@ -1,4 +1,4 @@
-name: 프로젝트 빌드
+name: 프로젝트 빌드2
 
 on:
   workflow_dispatch:
