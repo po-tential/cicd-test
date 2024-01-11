@@ -2,7 +2,7 @@
 **/.DS_Store
 
 ## maven, gradle
-**/target/**
+**/target/
 **/.gradle/
 **/settings.gradle
 **/build/
