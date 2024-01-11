@@ -35,5 +35,4 @@ jobs:
     - name: Build with Maven
       run: 
          selected_project=${{ github.event.inputs.project }}
-         cd servers/$selected_project
-         mvn clean package
+         mvn clean package -f servers/$selected_project
