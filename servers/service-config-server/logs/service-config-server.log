@@ -1,0 +1,12 @@
+13:50:51.064 [main] INFO  c.p.p.ServiceConfigServer - Starting ServiceConfigServer using Java 17.0.8.1 on DESKTOP-P0LQHE3 with PID 17512 (D:\po-tential\cicd-test\servers\service-config-server\target\classes started by BIT in D:\po-tential\cicd-test\servers\service-config-server)
+13:50:51.068 [main] INFO  c.p.p.ServiceConfigServer - The following 1 profile is active: "git"
+13:50:52.018 [main] INFO  o.s.c.c.s.GenericScope - BeanFactory id=cb52929b-8f0c-3fe2-b11f-cd3088c92f2d
+13:50:52.402 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 7777 (http)
+13:50:52.415 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+13:50:52.416 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.82]
+13:50:52.599 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+13:50:52.600 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1478 ms
+13:50:53.787 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 7777 (http) with context path ''
+13:50:54.037 [main] INFO  c.p.p.ServiceConfigServer - Started ServiceConfigServer in 3.847 seconds (JVM running for 4.83)
+13:51:53.680 [RMI TCP Connection(9)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+13:51:53.704 [RMI TCP Connection(9)-127.0.0.1] INFO  o.a.c.c.StandardService - Stopping service [Tomcat]
