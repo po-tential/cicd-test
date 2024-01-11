@@ -31,7 +31,7 @@ jobs:
           selected_project=${{ github.event.inputs.project }}
 
           # 선택된 프로젝트로 이동
-          cd $selected_project
+          cd servers/$selected_project
 
           # 모든 프로젝트에 대해 동일한 빌드 명령어 실행
           mvn clean package
